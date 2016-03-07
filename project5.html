@@ -34,18 +34,26 @@
 
 	<div class="contact section">
 		<div class="contact-buttons">
-			<div class="contact-button">
-				Download CV
-			</div>
-			<div class="contact-button">
-				linkedin
-			</div>
-			<div class="contact-button">
-				Dribble
-			</div>
-			<div class="contact-button">
-				Benhance
-			</div>
+			<a href="ChanelleQuezada_Resume.pdf" download>
+				<div class="contact-button">
+					Download CV
+				</div>
+			</a>
+			<a href="https://www.linkedin.com/in/chanellequezada" target="_blank">
+				<div class="contact-button">
+					linkedin
+				</div>
+			</a>
+			<a href="http://dribbble.com/chanellequezada" target="_blank">
+				<div class="contact-button">
+					Dribbble
+				</div>
+			</a>
+			<a href="https://www.behance.net/chanellequezada" target="_blank">
+				<div class="contact-button">
+					Behance
+				</div>
+			</a>
 		</div>
 		<div class="tag-line">
 			I prefer hand-written letters via carrier pigeon. Emails work too.
@@ -56,7 +64,10 @@
 			</a>
 		</div>
 		<div class="carat">
-			<img src="img/carat.png" alt="carat">
+			<div class="down-icon">
+				<span></span>
+				<span></span>
+			</div>
 		</div>
 	</div>
 
@@ -72,13 +83,18 @@
 			<span class="about-paragraph">I'm a creative living in Miami, FL, a recent transplant from Los Angeles. I'm the youth of design and yet maintain the maturity in tasteful aesthetic. Passionate and highly motivated, I love to challenge myself personally and on a professional level.</span>
 		</div>
 		<div class="pink-carat">
-			<img src="img/pinkcarat.png" alt="carat">
+			<div class="right-icon">
+				<span></span>
+				<span></span>
+			</div>
 		</div>
 	</div> 
-
+	<div class="video-close">
+		&times;
+	</div>
 	<div class="project-section proj1">
 		<div class="main-project-image montage-image">
-			<img src="img/montage-overlay.jpg" alt="Montage">
+			<iframe class="vimeo" src="https://player.vimeo.com/video/83456661?title=0&byline=0&portrait=0&badge=0&background=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 		</div>
 		<a href="project1.html" class="prjct-right">
 			prjct 01
@@ -86,6 +102,15 @@
 		<a href="project4.html" class="prjct-left">
 			prjct 04
 		</a>
+		<div class="bottom-links">
+			<a href="project4.html" class="prjct-prev">
+				PREVIOUS PROJECT
+			</a>
+			<a href="project1.html" class="prjct-next">
+				NEXT PROJECT
+			</a>
+			<br><br><br>
+		</div>
 	</div>
 
 	<script type="text/javascript" src="js/app.js"></script>
@@ -96,6 +121,20 @@
 		var headroom  = new Headroom(myElement);
 		// initialise
 		headroom.init(); 
+
+		if (screen.width > 640 && window.innerWidth > 640) {
+			$('.montage-image').click(function(){
+				$(this).css({'position':'absolute','top':'0','left':'0','width':'100%','z-index':'102','margin':'0'});
+				$('.vimeo').css({'pointer-events':'initial','height':'100vh','margin':'0'});
+				$('.video-close').css('opacity','1');
+			});
+
+			$('.video-close').click(function() {
+				$(this).css('opacity','0');
+				$('.montage-image').css({'position':'static','margin':'170px auto','width':'63%'});
+				$('.vimeo').css({'pointer-events':'none','height':'36vw'});
+			});
+		}
 	</script>
 </body>
 </html>

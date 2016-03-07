@@ -3,17 +3,21 @@ var contactClick = 0;
 $('.contact-link, .carat').click(function(){
 	contactClick++;
 	$("html, body").animate({ scrollTop: 0 }, "fast");
-	if (window.innerWidth > 640) {	
+	if (window.innerWidth > 767) {	
 		if (contactClick % 2 == 0) {
 			$('.contact').css('margin-top', '-800px');
+			enableScroll();
 		} else {
-			$('.contact').css('margin-top', '80px');
+			$('.contact').css('margin-top', '0');
+			disableScroll();
 		}
 	} else {
 		if (contactClick % 2 == 0) {
 			$('.contact').css('margin-top', '-120vh');
+			$('.cd-section, .project-section').css('display','block');
 		} else {
-			$('.contact').css('margin-top', '0px');
+			$('.contact').css('margin-top', '0');
+			$('.cd-section, .project-section').css('display','none');
 		}
 	}
 });
@@ -26,9 +30,15 @@ $('.about-link, .pink-carat').click(function(){
 	if (aboutClick % 2 == 0) {
 		$('.about').css('margin-left', '-100vw');
 		$('.section1').css('margin-left', '0');
+		if (window.innerWidth < 767) {
+			$('.cd-section, .project-section').css('display','block');
+		}
 	} else {
 		$('.about').css('margin-left', '0');
 		$('.section1').css('margin-left', '100vw');
+		if (window.innerWidth < 767) {
+			$('.cd-section, .project-section').css('display','none');
+		}
 	}
 });
 
@@ -47,7 +57,6 @@ $(function() {
     }
   });
 });
-
 
 // highlighter functionality
 $(window).on('DOMMouseScroll mousewheel', function(){
@@ -154,3 +163,44 @@ $('.montage-header').mouseover(function(){
 $('.montage-header').mouseout(function(){
 	$('.line-cover5').css('width', '0');
 });
+
+if (window.innerWidth < 768 || screen.width < 768) {
+	// Hide Header on on scroll down
+	var didScroll;
+	var lastScrollTop = 0;
+	var delta = 5;
+	var navbarHeight = $('.home .headroom').outerHeight();
+
+	$(window).scroll(function(event){
+	    didScroll = true;
+	});
+
+	setInterval(function() {
+	    if (didScroll) {
+	        hasScrolled();
+	        didScroll = false;
+	    }
+	}, 250);
+
+	function hasScrolled() {
+	    var st = $(this).scrollTop();
+	    
+	    // Make sure they scroll more than delta
+	    if(Math.abs(lastScrollTop - st) <= delta)
+	        return;
+	    
+	    // If they scrolled down and are past the navbar, add class .nav-up.
+	    // This is necessary so you never see what is "behind" the navbar.
+	    if (st > lastScrollTop && st > navbarHeight){
+	        // Scroll Down
+	        $('.home .headroom').css('margin-top','-100px');
+	    } else {
+	        // Scroll Up
+	        if(st + $(window).height() < $(document).height()) {
+	            $('.home .headroom').css('margin-top','0px');
+	        }
+	    }
+	    
+	    lastScrollTop = st;
+	}
+}

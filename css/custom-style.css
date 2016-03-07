@@ -7,23 +7,33 @@ html, body {
 	width: 100%;
 	height: 100px;
 	color: #fff;
-	background: #273cb5;
+	background: rgba(0,0,0,.2);
 	position: fixed;
 	top: 0;
 	z-index: 5;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
 	transition: all 1s;
 }
 
 .headroom {
+    -webkit-transition: transform 200ms linear;
+    -moz-transition: transform 200ms linear;
     transition: transform 200ms linear;
 }
 .headroom {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
     transition: all 0.5s;
 }
 .headroom--pinned {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
     transform: translateY(0%);
 }
 .headroom--unpinned {
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
     transform: translateY(-100%);
 }
 
@@ -75,6 +85,8 @@ html, body {
 	height: 2px;
 	background: #fff;
 	opacity: 0.2;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
 	transition: all 0.5s;
 }
 
@@ -90,17 +102,22 @@ html, body {
 	background-size: 7%;
 	margin-top: -800px;
 	position: relative;
-	height: 100vh;
-	z-index: 1;
+	height: 800px;
+	z-index: 6;
 	text-align: center;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
 	transition: all 1s;
 }
 .contact-buttons {
-	width: 80%;
+	width: 85%;
 	position: absolute;
-	top: 65px;
+	top: 100px;
 	left: 50%;
 	margin-left: -40.6%;
+}
+.contact-buttons a {
+	color: #fff;
 }
 .contact-button {
 	font-size: 18px;
@@ -114,6 +131,8 @@ html, body {
 	letter-spacing: 4px;
 	margin: 0 3px;
 	cursor: pointer;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
 	transition: all 0.5s;
 }
 .contact-button:hover {
@@ -167,13 +186,15 @@ html, body {
 }
 .about {
 	position: relative;
-	top: 100px;
+	top: 0;
 	left: 0;
-	height: 100vh;
+	height: 800px;
 	width: 100vw;
-	z-index: 3;
+	z-index: 6;
 	background: #fff;
 	margin-left: -100vw;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
 	transition: all 1s;
 }
 .about-pic {
@@ -202,6 +223,73 @@ html, body {
 	left: 56%;
 	margin-left: -100px;
 	z-index:0;
+}
+.down-icon {
+	cursor: pointer;
+	height: 40px;
+	width: 40px;
+	position: relative;
+}
+
+.down-icon span {
+	background: #fff;
+	height: 2px;
+	position: absolute;
+	top: 0;
+	width: 30px;
+	transition: left 0.2s ease-out;
+}
+
+.down-icon span:nth-of-type(1) {
+	left: 0;
+	transform: rotate(45deg);
+}
+
+.down-icon span:nth-of-type(2) {
+	left: 20px;
+	transform: rotate(315deg);
+}
+
+.down-icon:hover span:nth-of-type(1) {
+	left: 10px;
+}
+
+.down-icon:hover span:nth-of-type(2) {
+	left: 10px;
+}
+
+.right-icon {
+	cursor: pointer;
+	height: 40px;
+	width: 40px;
+	position: relative;
+}
+
+.right-icon span {
+	background: #ff00ff;
+	height: 2px;
+	position: absolute;
+	top: 0;
+	width: 30px;
+	transition: top 0.2s ease-out;
+}
+
+.right-icon span:nth-of-type(1) {
+	top: 0;
+	transform: rotate(45deg);
+}
+
+.right-icon span:nth-of-type(2) {
+	top: 20px;
+	transform: rotate(315deg);
+}
+
+.right-icon:hover span:nth-of-type(1) {
+	top: 10px;
+}
+
+.right-icon:hover span:nth-of-type(2) {
+	top: 10px;
 }
 .pink-carat {
 	height: 50px;
@@ -238,8 +326,11 @@ html, body {
 }
 .section1 {
 	background: #6d4fed;
-	position: relative;
 	height: 100vh;
+	margin-top: 0;
+	position: relative;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
 	transition: all 1s;
 }
 .hello {
@@ -266,6 +357,8 @@ html, body {
 	left: 420px;
 	background: #6d4fed;
 	text-transform: uppercase;	
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
 	transition: all 1s;
 }
 .there {
@@ -318,6 +411,8 @@ i {
 	width: 0px;
 	background: #fff;
 	z-index: 3;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
 	transition: all 0.5s;
 }
 .project-date {
@@ -428,24 +523,24 @@ i {
 
 /*project pages*/
 .project-nav {
-	background: #bcbcbc;
-	/*width: 100vw;*/
+	background: rgba(0,0,0,.2);
 }
 .project-section {
 	color: #fff;
 	width: 100vw;
-	height: 700px;
+	height: auto;
 }
 .main-project-image {
 	width: 70%;
-	margin: 150px auto 0 auto;
+	margin: 150px auto 50px auto;
 }
 .main-project-image img {
 	width: 100%;
 }
 .secondary-project-image {
 	width: 70%;
-	margin: 80px auto 0 auto;
+	margin: 50px auto 0 auto;
+	position: relative;
 }
 .secondary-project-image img {
 	width: 100%;
@@ -461,45 +556,55 @@ i {
 .prjct-right {
 	position: fixed;
 	right: -70px;
-	top: 60%;
-	height: 200px;
+	bottom: 51%;
+	height: 15px;
 	margin-top: -100px;
 	color: #ff00ff;
 	text-transform: uppercase;
 	text-decoration: none;
 	letter-spacing: 3px;
 	font-weight: bold;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
 	transform: rotate(90deg);
+	-webkit-transform-origin: left top 0;
+	-moz-transform-origin: left top 0;
 	transform-origin: left top 0;
 }
 .prjct-left {
 	position: fixed;
 	left: -70px;
-	top: 60%;
-	height: 200px;
+	bottom: 51%;
+	height: 15px;
 	margin-top: -100px;
 	color: #ff00ff;
 	letter-spacing: 3px;
 	font-weight: bold;
 	text-transform: uppercase;
 	text-decoration: none;
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
 	transform: rotate(270deg);
+	-webkit-transform-origin: right top 0;
+	-moz-transform-origin: right top 0;
 	transform-origin: right top 0;
 }
 .proj1 {
 	background: #fff;
-	margin-top: -100vh !important;
+	margin-top: -800px;
+	text-align: center;
 }
 .proj2 {
 	background: #dddddd;
 }
 .proj3 {
 	background: #fff;
-	height: 120vh;
+	height: auto;
 }
 .proj4 {
 	background: #efefef;
 	height: auto;
+	text-align: center;
 }
 .phone-images {
 	width: 70%;
@@ -507,52 +612,51 @@ i {
 }
 .phone {
 	width: 40%;
-	margin: 0px auto;
+	margin: 50px auto;
 	display: inline-block;
 }
 .phone img {
 	width: 70%;
 	margin: 0 auto;
-	padding-top: 50px;
 	padding-left: 40%;
 	padding-right: 40%;
 	text-align: center;
 }
 .phone-proj-holder {
-	width: 800px;
-	margin: 100px auto 0 auto;
+	width: 80%;
+	margin: -800px auto;
 	padding-top: 100px;
 }
 .phone-project-text {
 	color: #bcbcbc;
-	font-size: 22px;
+	font-size: 1.8vw;
 	line-height: 40px;
 	letter-spacing: 2px;
-	width: 500px;
+	width: 60%;
 	float: left;
 	vertical-align: middle;
-	margin-top: 23vh;
+	margin-top: 15vw;
 }
 .phone-project-image {
 	float: right;
-	width: 250px;
-	margin-top: 10vh;
+	width: 26%;
+	margin: 50px 50px 0 0;
 }
 .phone-project-image img {
 	width: 100%;
 }
 .phone-full-bg {
 	background: url('../img/float-full.jpg');
-	background-size: 100%;
+	background-size: cover;
 	background-repeat: no-repeat;
 	height: 100vh;
 	background-position: -1%;
+	margin-top: 108vw;
 }
 .graybg {
 	background: #dddddd;
-	margin-top: -50px;
 	padding-top: 20px;
-	height: 100vh;
+	height: auto;
 }
 .phone-proj3 {
 	background: #efefef;
@@ -572,22 +676,29 @@ i {
 	padding: 60px 0;
 }
 .marcellus-first {
-	margin-top: -100vh;
+	margin-top: -800px;
 }
 .whitebg {
 	background: #ffffff;
 }
 .grimes-image {
 	width: 64%;
+	margin-top: 170px;
+}
+
+.grimes-image img {
+	margin-top: -50px;
+	padding-bottom: 50px;
 }
 .montage-image {
 	width: 63%;
-	padding-top: 30px;
 }
 .marcellus-screen {
 	width: 50%;
-	padding-top: 85px;
+	padding: 0 0 50px 0;
+	margin-top: 95px;
 }
+
 .mobile-show {
 	opacity: 0;
 	transition: all 0.3s;
@@ -601,27 +712,113 @@ i {
 	height: 100vh;
 }
 
+.imac {
+	position: relative;
+	pointer-events: none;
+	z-index: 1;
+}
+
+.bottom-links {
+	margin-top: 100px;
+}
+
+.bottom-links a {
+	text-align: center;
+	margin: 0 auto;
+	font-size: 12px;
+	color: #ff00ff;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 3px;
+	padding: 120px 70px 0 70px;
+}
+
+.bottom-links br {
+	line-height: 70px;
+}
+
+.project-section .vimeo {
+	border: none;
+	cursor: pointer;
+	width: 92%;
+	margin: 2.85vw 0 0 2.8vw;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+
+.marcellus-screen .vimeo {
+	margin: 1.1vw 0 0 2vw;
+    height: 27vw;
+}
+
+.montage-image .vimeo {
+	margin: 20px 0 0 0;
+	pointer-events: none;
+	position: static;
+	width: 100%;
+}
+
+.video-close {
+	cursor: pointer;
+	color: #fff;
+	font-size: 4vw;
+	opacity: 0;
+	position: absolute;
+	top: -10px;
+	left: 30px;
+	z-index: 103;
+	-webkit-transition: opacity 0.5s ease-out;
+	-moz-transition: opacity 0.5s ease-out;
+	transition: opacity 0.5s ease-out;
+}
+
+.vimeo {
+	height: 36vw;
+	width: 100%;
+}
+
+.phone-video {
+	text-align: center;
+}
+
+.video-vert {
+	margin: 50px 0;
+    height: 525px;
+}
+
 /*mobile styling*/
-@media screen and (max-width:640px) {
+@media screen and (max-width:767px) {
 	html, body {
 		margin: 0;
 		padding: 0;
 		overflow-x: hidden;
 	}
 	body {
-		height: 600vh;
+		height: auto;
 	}
 	.mobile-show {
 		opacity: 1;
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
 		transition: all 0.3s;
 	}
 	.mobile-hide {
 		display: none;
 		opacity: 0;
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
 		transition: all 0.3s;
 	}
 	.logo {
 		left: 30px;
+	}
+	.nav {
+		z-index: 101;
 	}
 	.nav ul {
 		float: none;
@@ -799,26 +996,42 @@ i {
 		z-index: 99;
 	}
 	.p1 .proj1 {
-		height: 500px;
+		height: auto;
+		margin-top: 150px !important;
+	}
+	.p1 .main-project-image {
+		margin-top: 150px !important;
 	}
 	.p1 .proj2 {
-		height: 840px;
+		height: auto;
+		padding: 10px 0;
 	}
 	.p1 .proj3 {
-		height: 300px;
+		height: auto;
 	}
 	.p1 .proj4 {
-		height: 1200px;
+		height: auto;
 	}
 	.p2 .proj1 {
-		height: 600px;
+		height: auto;
+		margin-top: -50px !important;
 	}
 	.p2 .proj3 {
-		height: 300px;
+		height: auto;
+	}
+	.p5 .proj1 {
+		margin-top: 0 !important;
 	}
 	.phone {
 		display: block;
 		width: 60%;
+	}
+	video {
+		margin: 4px 0 0 6px;
+		width: 96%;
+	}
+	.secondary-project-image {
+		z-index: 100;
 	}
 	.phone img {
 		width: 100%;
@@ -835,17 +1048,19 @@ i {
 		width: 70%;
 	}
 	.phone-full-bg {
-		height: 61vw;
+		height: 61vw
 	}
 	.phone-proj-holder {
 		width: 100vw;
+		height: 300vw;
+		margin-top: 10vw !important;
 	}
 	.phone-project-image {
 		position: absolute;
 		left: 50%;
 		width: 50%;
 		margin-left: -25%;
-		margin-top: 30px;
+		margin-top: 44vw;
 	}
 	.phone-project-text {
 		width: 70vw;
@@ -853,21 +1068,24 @@ i {
 		line-height: 6vw;
 		left: 50%;
 		margin-left: 15%;
-		margin-top: 480px;
+		margin-top: 0;
 	}
-	.p4 .proj3 {
-		height: 380px;
+	.p4 .tertiary-project-image {
+		margin: 0 auto;
+	}
+	.marcellus-first {
+		margin-top: 0;
 	}
 	.marcellus-screen {
-		padding-top: 75px;
+		margin-top: 120px;
+		width: 70%;
+	}
+	.marcellus-screen .vimeo {
+		margin: 2.85vw 0 0 2.8vw;
+		height: 36vw;
 	}
 	.montage-image {
 		overflow: visible;
-	}
-	.montage-image img {
-		width: 100%;
-		margin-left: 0%;
-		margin-top: 70%;
 	}
 	.pink-square1 {
 		left: 23%;
@@ -903,17 +1121,18 @@ i {
     	margin-left: -115px;
 	}
 	.contact {
-		height: 90vh;
+		height: 100vh;
 		position: absolute;
-		top: 90px;
+		top: 0;
 		width: 100vw;
 		margin-top: -120vh;
-		z-index: 2;
+		z-index: 101;
 	}
 	.about {
 		position: absolute;
 		margin-left: -100vw;
-		top: 90px;
+		top: 0;
+		z-index: 101;
 	}
 	.contact-button {
 		width: 99%;
@@ -922,22 +1141,41 @@ i {
 		margin-bottom: 8px;
 	}
 	.contact-buttons {
-		margin-left: -40%;
-		top: 40px;
+		margin-left: -43%;
+		top: 70px;
 	}
 	.contact .email {
-		top: 73%;
+		top: 75%;
 	}
 	.contact .email a {
 		letter-spacing: 2px;
 		font-size: 0.8em;
 	}
+	.right-icon {
+		top: -250px;
+	}
+	.right-icon span:nth-of-type(1) {
+		top: 10px;
+	}
+
+	.right-icon span:nth-of-type(2) {
+		top: 10px;
+	}
 	.tag-line {
-		top: 77%;
+		top: 79%;
 		font-size: 0.7em;
 	}
 	.carat { 
-		bottom: 4%;
+		top: 6%;
+		left: auto;
+		right: 20px;
+		margin-left: 0;
+	}
+	.down-icon span:nth-of-type(1) {
+		left: 10px;
+	}
+	.down-icon span:nth-of-type(2) {
+		left: 10px;
 	}
 	.section1 {
 		height: 100vh;
@@ -945,9 +1183,13 @@ i {
 	.main-div {
 		position: relative;
 	}
+	.video-vert {
+		width: 70%;
+    	height: 126vw;
+	}
 }
 
-@media screen and (max-width:640px) and (orientation: landscape) {
+@media screen and (max-width:767px) and (orientation: landscape) {
 	.main-div, .cd-section, .section1 {
 		height: 150vh;
 	}
@@ -960,5 +1202,8 @@ i {
 	.q-image {
 		width: 52vw;
 		left: 80%;
+	}
+	.phone-proj-holder {
+		height: 175vw;
 	}
 }
